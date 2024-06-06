@@ -25,7 +25,8 @@
 
 	<!-- SPELLS -->
 	<script src='js/library/jquery-2.1.0.min.js'></script>
-	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 	<!-- Main controller files -->
     <script src='js/controller/page_controller.js'></script>
@@ -44,6 +45,15 @@ $(document).ready(function(){
     setPage("partial/aboutme.html",0);
 });
 
+
+function onClickMenu() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
 </script>
 <body >
 	<!-- Google Tag Manager (noscript) -->
@@ -55,20 +65,26 @@ $(document).ready(function(){
         <div class="name">Maeda F. Hanafi</div>
 		<div class="tabbed">
 			<!--<p class="content-text"><a href="http://maedahanafi.info">http://maedahanafi.info</a></p>-->
-			<p class="content-text">Detroit, USA // Abu Dhabi, UAE // NY, USA // CT, USA</p>
-			<p class="content-text">maeda.hanafi@ibm.com // maeda.hanafi@nyu.edu // maeda.han@gmail.com // +1 313-903-2726 </p>
-			<p class="content-text"><a href="https://github.com/theTrueCaptian/">My Github</a> // <a href="https://maeda-han.medium.com/">My Medium Articles</a></p>
-			<p class="content-text"><a href="https://github.com/theTrueCaptian/personal-website-template-monokai">Get this theme</a> </p>
+			<p class="content-text">Detroit, USA <!--// Abu Dhabi, UAE // NY, USA // CT, USA--></p>
+			<p class="content-text">maeda.hanafi@ibm.com // <s>maeda.hanafi@nyu.edu</s> // maeda.han@gmail.com // +1 313-903-2726 </p>
+			<p class="content-text"><a href="https://github.com/maedahanafi/">My Github</a> // <a href="https://maeda-han.medium.com/">My Medium Articles</a></p>
+			<p class="content-text"><a href="https://github.com/maedahanafi/personal-website-template-monokai">Get this theme</a> </p>
 
 		</div>
 	</div>
     <div class="nav">
-		<div class="button" onclick="setPage('partial/aboutme.html',0)">About Me</div>
-    	<div class="button" onclick="setPage('partial/research.html',1)">Research</div>
-      <!--<div class="button" onclick="setPage('partial/writing.html',1)">Writing</div>-->
-    	<div class="button" onclick="setPage('partial/cv.html',2)">CV</div>
-    	<!--<div class="button" onclick="window.open('pdf/MaedaHanafiResumeSpet2020-DA.pdf','_blank')">PDF Resume</div>-->
-    	<!--<div class="button" onclick="setPage('partial/hobbies.html',4)">Misc.</div>-->
+		<div class="name">Maeda Hanafi</div>
+		<div id="myLinks">
+			<div class="button" onclick="setPage('partial/aboutme.html',0)">About Me</div>
+			<div class="button" onclick="setPage('partial/research.html',1)">Research</div>
+		  <!--<div class="button" onclick="setPage('partial/writing.html',1)">Writing</div>-->
+			<div class="button" onclick="setPage('partial/cv.html',2)">CV</div>
+			<!--<div class="button" onclick="window.open('pdf/MaedaHanafiResumeSpet2020-DA.pdf','_blank')">PDF Resume</div>-->
+			<!--<div class="button" onclick="setPage('partial/hobbies.html',4)">Misc.</div>-->
+		</div>
+		<a href="javascript:void(0);" class="menu-icon" onclick="onClickMenu()">
+			<i class="fa fa-bars"></i>
+		</a>
 	</div>
 	<div id="dynamic-content" class="main"></div>
 
