@@ -1,16 +1,16 @@
 
 <html >
 <head>
-	<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-NXFB4PN');</script>
-	<!-- End Google Tag Manager -->
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-BE7ZK294NN"></script>
-	<script>
+    <!-- End Google Tag Manager -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BE7ZK294NN"></script>
+    <script>
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}
 	  gtag('js', new Date());
@@ -18,24 +18,46 @@
 	  gtag('config', 'G-BE7ZK294NN');
 	</script>
 
-	<title> Maeda F. Hanafi </title>
+    <title> Maeda F. Hanafi </title>
 
-	<link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.css" />
-	<link rel="stylesheet" type="text/css" href="css/sublime.monokai.css"/>
+    <link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.css" />
+    <link rel="stylesheet" type="text/css" href="css/pastel.pink.css" id="pastelpink" disabled="true"/>
+    <link rel="stylesheet" type="text/css" href="css/sublime.monokai.css" id="sublimemonokai" disabled="true"/>
+    <link rel="stylesheet" type="text/css" href="css/minimalist.css" id="minimalist"/>
 
-	<!-- SPELLS -->
-	<script src='js/library/jquery-2.1.0.min.js'></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- SPELLS -->
+    <script src='js/library/jquery-2.1.0.min.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 
-	<!-- Main controller files -->
+    <!-- Main controller files -->
     <script src='js/controller/page_controller.js'></script>
 
-	<style>
-	    
-	</style>
+    <style>
+
+    </style>
 </head>
 <style>
+
+a{
+    cursor: pointer;
+}
+.grid{
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: auto auto auto;
+}
+@media only screen and (max-device-width: 768px) {
+    .grid{
+        grid-template-columns: auto auto;
+    }
+}
+@media only screen and (max-device-width: 450px) {
+    .grid{
+        grid-template-columns: auto;
+    }
+}
+
 
 </style>
 
@@ -54,41 +76,64 @@ function onClickMenu() {
     x.style.display = "block";
   }
 }
+
+/* All available themes: allStyles is an array of the ids of each stylesheet; allStyleLinks is the link to the individual theme repo */
+allStyles = ["pastelpink", "sublimemonokai", "minimalist"]
+allStyleLinks = ["https://github.com/maedahanafi/personal-website-pastel-theme", "https://github.com/maedahanafi/personal-website-template-monokai", "https://github.com/maedahanafi/personal-website-minimalist"]
+currStyle = 2
+document.getElementById("theme-link").href=allStyleLinks[currStyle];
+
+function changeTheme(){
+    currStyle = currStyle + 1;
+    if(currStyle>=allStyles.length){currStyle = 0;}
+    for(var styleStrId of allStyles){
+        document.getElementById(styleStrId).disabled=true;
+    }
+    document.getElementById(allStyles[currStyle]).disabled=false;
+    document.getElementById("theme-link").href=allStyleLinks[currStyle];
+
+}
 </script>
 <body >
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXFB4PN"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
-	
-	<div class="header">
-        <div class="name">Maeda F. Hanafi</div>
-		<div class="tabbed">
-			<!--<p class="content-text"><a href="http://maedahanafi.info">http://maedahanafi.info</a></p>-->
-			<p class="content-text">Detroit, USA <!--// Abu Dhabi, UAE // NY, USA // CT, USA--></p>
-			<p class="content-text">maeda.hanafi@ibm.com // <s>maeda.hanafi@nyu.edu</s> // maeda.han@gmail.com // +1 313-903-2726 </p>
-			<p class="content-text"><a href="https://github.com/maedahanafi/">My Github</a> // <a href="https://maeda-han.medium.com/">My Medium Articles</a></p>
-			<p class="content-text"><a href="https://github.com/maedahanafi/personal-website-template-monokai">Get this theme</a> </p>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXFB4PN"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
-		</div>
-	</div>
-    <div class="nav">
-		<div class="name">Maeda Hanafi</div>
-		<div id="myLinks">
-			<div class="button" onclick="setPage('partial/aboutme.html',0)">About Me</div>
-			<div class="button" onclick="setPage('partial/research.html',1)">Research</div>
-		  <!--<div class="button" onclick="setPage('partial/writing.html',1)">Writing</div>-->
-			<div class="button" onclick="setPage('partial/cv.html',2)">CV</div>
-			<!--<div class="button" onclick="window.open('pdf/MaedaHanafiResumeSpet2020-DA.pdf','_blank')">PDF Resume</div>-->
-			<!--<div class="button" onclick="setPage('partial/hobbies.html',4)">Misc.</div>-->
-		</div>
-		<a href="javascript:void(0);" class="menu-icon" onclick="onClickMenu()">
-			<i class="fa fa-bars"></i>
-		</a>
-	</div>
-	<div id="dynamic-content" class="main"></div>
+<div class="header">
+    <div class="name">Maeda F. Hanafi</div>
+    <div class="info-card tabbed grid">
+        <!--<p class="content-text"><a href="http://maedahanafi.info">http://maedahanafi.info</a></p>-->
+        <p class="content-text"><i class="fa fa-location-dot"></i>Detroit, USA <!--// Abu Dhabi, UAE // NY, USA // CT, USA--></p>
+        <p class="content-text"><i class="fa-solid fa-envelope"></i>maeda.hanafi@ibm.com </p>
+        <p class="content-text"><i class="fa-solid fa-envelope"></i><s>maeda.hanafi@nyu.edu</s> </p>
+        <p class="content-text"><i class="fa-solid fa-envelope"></i>maeda.han@gmail.com </p>
+        <p class="content-text"><i class="fa-solid fa-phone"></i>+1 313-903-2726 </p>
+        <p class="content-text"><i class="fa-solid fa-code"></i><a href="https://github.com/maedahanafi/">My Github</a> </p>
+        <p class="content-text"><i class="fa-solid fa-book"></i><a href="https://maeda-han.medium.com/">My Medium Articles</a></p>
+        <p class="content-text"><a id="theme-link">Get this theme</a></p>
 
-   
+        <p class="content-text"><a onclick="changeTheme()">Change theme</a> </p>
+    </div>
+
+</div>
+<div class="nav">
+    <div class="name">Maeda Hanafi</div>
+    <div id="myLinks">
+        <div class="button" onclick="setPage('partial/aboutme.html',0)">About Me</div>
+        <div class="button" onclick="setPage('partial/research.html',1)">Research</div>
+        <!--<div class="button" onclick="setPage('partial/writing.html',1)">Writing</div>-->
+        <div class="button" onclick="setPage('partial/cv.html',2)">CV</div>
+        <!--<div class="button" onclick="window.open('pdf/MaedaHanafiResumeSpet2020-DA.pdf','_blank')">PDF Resume</div>-->
+        <!--<div class="button" onclick="setPage('partial/hobbies.html',4)">Misc.</div>-->
+    </div>
+    <a href="javascript:void(0);" class="menu-icon" onclick="onClickMenu()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+<div id="dynamic-content" class="main"></div>
+
+
 
 </body>
 </html>
