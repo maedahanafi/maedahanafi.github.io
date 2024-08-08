@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /pdf/
+Disallow: /blender-img/
+Disallow: /img/
+Disallow: /thumbnails/
+
+Allow: /
