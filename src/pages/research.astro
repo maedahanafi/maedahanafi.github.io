@@ -1,0 +1,284 @@
+---
+import Header from '../components/Header.astro';
+import Project from "../components/Project.astro";
+import Publication from "../components/Publication.astro";
+import Sidebar from "../components/Sidebar.astro";
+const projects = [
+  {
+    title: "Conversational AI Agents and Retrieval-Augmented Generation",
+    publications:[
+      {
+        title: "Creating Conversational Datasets for Retrieval-Augmented Generation Applications is Hard: Challenges and Research Opportunities",
+        authors: "Maeda F. Hanafi, Kshitij Fadnis, Marina Danilevsky, Sara Rosenthal, Yannis Katsis",
+        venue: "CHI-LBW 2025",
+        type: "Extended Abstract",
+        links: []
+      },
+      {
+        type: "Paper Publication (Honorable Mention Award)",
+        title: "Diagnosing and Prioritizing Issues in Automated Order-Taking Systems: A Machine-Assisted Error Discovery Approach",
+        authors: "Maeda F. Hanafi, Frederick Reiss, Yannis Katsis, Robert Moore, Mohammad H Falakmasir, Pauline Wang, David Wood, Changchang Liu",
+        venue:"CHI 2025",
+        links:[]
+      },
+      {
+        type: "Extended Abstract",
+        title: "Machine-Assisted Error Discovery in Conversational AI Systems",
+        authors: "Maeda F. Hanafi, Frederick Reiss, Yannis Katsis, Robert Moore, David Wood, Mohammad H Falakmasir, Changchang Liu",
+        venue: "CHI Late Breaking Work (CHI-LBW) 2024",
+        links:[
+          {
+            "text": "Paper",
+            "href": "https://dl.acm.org/doi/abs/10.1145/3613905.3651120",
+          },
+          {
+            "text": "Video Preview",
+            "href": "https://youtu.be/um946_LJonU?si=E7QW-aG7AO0mSZ-F",
+          },
+          {
+            "text": "Video",
+            "href": "https://youtu.be/rjoRds8ig_E?si=pGi4XFZQyzU4kGjh",
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: "Human-in-the-loop Systems and Large Language Models",
+    publications: [
+      {
+        type: "Paper",
+        title: "Identifying Noise in Human-Created Datasets using Training Dynamics from Generative Models",
+        authors: "Maeda F. Hanafi, Ishan Jindal, Yannis Katsis, Lucian Popa, Huaiyu Zhu",
+        venue: "EMNLP Findings 2025",
+        links:[]
+      },
+      {
+        type: "Workshop Paper",
+        title: "A Comparative Analysis between Human-in-the-loop Systems and Large Language Models for Pattern Extraction Tasks",
+        authors: "Maeda F. Hanafi, Yannis Katsis, Ishan Jindal, Lucian Popa.",
+        venue: "DaSH@EMNLP 2022",
+        links:[]
+      }
+    ]
+  },
+  {
+    title: "InteractEva: A Simulation-based Evaluation Framework for Interactive AI Systems",
+    publications: [
+      {
+        type: "Demo Paper",
+        title: "InteractEva: A Simulation-based Evaluation Framework for Interactive AI Systems",
+        authors: "Yannis Katsis, Martín Santillán Cooper, Maeda F. Hanafi and Yunyao Li",
+        venue: "AAAI 2022",
+        links:[
+          {
+            "text": "Paper",
+            "href": "https://ojs.aaai.org/index.php/AAAI/article/view/21721",
+          }
+        ]
+      },
+      {
+        type: "Industry Track Paper",
+        title: "A Simulation-based Evaluation Framework for Interactive AI Systems and Its Application",
+        authors: "Martín Santillán Cooper, Maeda Hanafi, Yannis Katsis and Yunyao Li",
+        venue: "IAAI 2022",
+        links:[
+          {
+            "text": "Paper",
+            "href": "https://aaai-2022.virtualchair.net/papers.html?filter=authors&search=Maeda+F.+Hanafi",
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: "WhyFlow: Interactively Explaining Errors in Data Extraction Pipelines",
+    publications: [
+      {
+        type: "Paper",
+        title: "WhyFlow: Explaining Errors in Data Flows Interactively",
+        authors: " Maeda F. Hanafi, Azza Abouzied, Marina Danilevsky, and Yunyao Li",
+        venue: "SIGKDD. DASH 2020",
+        links:[
+          {
+            "text": "Paper",
+            "href": "https://drive.google.com/file/u/1/d/1EROo3fYk8E1fnX5vBtB1TYtfs_PWsX-N/view?usp=sharing",
+          },
+          {
+            "text": "Video",
+            "href": "https://youtu.be/ZRkveX8nCts",
+          }
+        ]
+      },
+      {
+        type: "Poster Presentation",
+        title: "FlowFix/WhyFlow: Diagnosing Incorrect Behavior in Large Data Pipelines",
+        authors: "",
+        venue: "NYUAD Annual Research Conference 2017",
+        links:[]
+      },
+      {
+        type: "Seminar and Poster Presentation",
+        title: "Diagnosing Incorrect Behavior in Large Data Pipelines",
+        authors: "",
+        venue: "IBM Research Almaden, San Jose, California",
+        links:[]
+      }
+    ]
+  },
+  {
+    title: "Texture: Structure Identification Over Print and PDF Documents",
+    publications: [
+      {
+        type: "Paper Publication",
+        title: "A Collaborative Framework for Structure Identification over Print Documents",
+        authors: "Maeda F. Hanafi, Miro Mannino, and Azza Abouzied",
+        venue: "SIGMOD. HILDA 2019",
+        links:[
+          {
+            "text": "Paper",
+            "href": "https://hilda.io/2019/proceedings/HILDA2019_paper_8.pdf",
+          }
+        ]
+      },
+      {
+        type: "Poster Presentation",
+        title: "Texture: Extracting Texts using User Annotations",
+        authors: "",
+        venue:"NYUAD Annual Research Conference 2015",
+        links:[]
+      },
+      {
+        type: "Seminar",
+        title: "Texture: Structuring Semi-Structured Documents",
+        authors: "",
+        venue: "University of California, Berkeley. 2015",
+        links:[]
+      }
+    ]
+  },
+  {
+    title: "SEER: Auto-Generating Extraction Rules from User-Highlighted Texts",
+    publications: [
+      {
+        type: "Demo Paper",
+        title: "Synthesizing Extraction Rules from User Examples with SEER",
+        authors: "Maeda F. Hanafi, Azza Abouzied, Laura Chiticariu, and Yunyao Li",
+        venue: "SIGMOD 2017",
+        links:[
+          {
+            "text": "Paper",
+            "href": "https://dl.acm.org/citation.cfm?id=3056443",
+          }
+        ]
+      },
+      {
+        type: "Paper Publication",
+        title: "SEER: Auto-Generating Information Extraction Rules from User-Specified Examples",
+        authors: "Maeda F. Hanafi, Azza Abouzied, Laura Chiticariu, and Yunyao Li",
+        venue:"CHI 2017",
+        links:[
+          {
+            "text": "Paper",
+            "href": "https://dl.acm.org/citation.cfm?id=3025540",
+          },
+          {
+            "text": "Video",
+            "href": "https://www.youtube.com/watch?v=xF7WhkXk1Y0",
+          },
+          {
+            "text": "CHI Slides",
+            "href": "https://www.slideshare.net/MaedaHanafi/seer-autogenerating-information-extraction-rules-from-userspecified-examples",
+          }
+        ]
+      },
+      {
+        type: "Poster Presentation",
+        title: "Seer: An End-to-End Automated Workflow for Information Extraction using User Highlights",
+        authors: "",
+        venue:"North East Database Day, Massachusetts Institute of Technology. 2016",
+        links:[]
+      },
+      {
+        type: "Seminar and Poster Presentation",
+        title: "SEER: An End-to-End Automated Workflow for Information Extraction using User Highlights",
+        authors: "",
+        venue:"IBM Research Almaden, San Jose, California. 2015",
+        links:[]
+      }
+    ]
+  }
+];
+
+const services = [
+  {
+    title: "Services",
+    desc: [
+      "Served as research paper reviewer: AKBC 2021, EMNLP 2022, CHI 2022, CHI-LBW 2024, CSCW 2024, NAACL 2024, EMNLP 2024 Industry Track, CHI 2025, CHI-LBW 2025, EMNLP 2025 Industry Track, CHI 2026, EACL 2026",
+      "Served as primary associate chair: CHI-LBW 2024"
+    ]
+  }
+];
+---
+
+<!DOCTYPE html>
+<html
+>
+  <Header title="Research | Maeda F. Hanafi" />
+  <body>
+    <div class="content">
+        <Sidebar selectedItem="research" />
+      <nav class="main">
+        <div class="container">
+          <div class="back-nav-container">
+            <a href="/" class="back-nav-button w-inline-block"
+              ><img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+              <div>Back</div></a
+            >
+          </div>
+          <div class="content-container">
+            <h1>Research Work</h1>
+            
+                
+                  {projects.map(project => {
+                    return (
+                      <section class="items-container">
+                        <h3>{project.title}</h3>
+                        <div class="publication-items">
+                          {project.publications && project.publications.map((pub) => (
+                              <Publication
+                                type={pub.type}
+                                title={pub.title}
+                                authors={pub.authors}
+                                venue={pub.venue}
+                                links={pub.links}
+                              />
+                          ))}
+                        </div>
+                      </section>
+                    ); 
+                  })}
+                
+            
+          </div>
+          <div class="content-container">
+            <h1>Services</h1>
+            <section class="items-container">
+                <div class="resouce-items">
+                    {services.map(service => (
+                      <Project 
+                        title={service.title} 
+                        desc={service.desc}
+                        tech={[]}
+                      />
+                    ))}
+                  </div>
+            </section>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+  </body>
+</html>

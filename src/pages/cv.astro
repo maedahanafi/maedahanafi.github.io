@@ -1,0 +1,325 @@
+---
+import Header from '../components/Header.astro';
+import Project from '../components/Project.astro';
+import Experience from '../components/Experience.astro';
+import List from '../components/List.astro';
+import Publication from "../components/Publication.astro";
+import Skills from "../components/Skills.astro";
+import Sidebar from '../components/Sidebar.astro';
+const projects = [
+  {
+    title: "TeleJS",
+    desc: [
+      "Built a lightweight, open-source Slack API framework for efficient bot development",
+      "Developed in Node.js and published as an NPM package"
+    ],
+    tech: ["Node.js", "NPM"]
+  }
+];
+
+const education = [
+  {
+    header: "Ph.D. in Computer Science",
+    date: "2015-2020",
+    location: "New York University - Tandon School of Engineering",
+    links: [
+      {
+        text: "Dissertation",
+        href: "https://www.proquest.com/docview/2428045206"
+      }
+    ],
+  },
+  {
+    header: "B.S. in Computer Science",
+    date: "2010-2012",
+    location: "Southern Connecticut State University",
+    links: [],
+    desc: [
+      "Cum Laude",
+      "Other institutions: University of New Haven (2009), Gateway Community College (2008-2009)"
+    ]
+  }
+];
+
+const workExperience = [
+  {
+    header: "Research Scientist",
+    date: "April 2021 to July 2025",
+    location: "IBM Research, San Jose, California",
+    links: [],
+  },
+  {
+    header: "React Native Developer",
+    date: "Spring 2021",
+    location: "DS Luxury, Chicago, Illinois",
+    links: [],
+  },
+  {
+    header: "Artificial Intelligence Research Intern",
+    date: "Summer 2020",
+    location: "Remote Internship at Center of Innovation and Security Solutions, Lockheed Martin, Abu Dhabi, United Arab Emirates",
+    links: [],
+  },
+  {
+    header: "Ph.D. Research Intern",
+    date: "Summer 2015 & 2017",
+    location: "IBM Research Almaden, San Jose, California",
+    links: [],
+  },
+  {
+    header: "Teaching Assistant",
+    date: "Spring 2017",
+    location: "Computer Science Department, New York University Abu Dhabi",
+    desc: ["CS-AD390 Capstone Data Extraction"],
+    links: [],
+  },
+  {
+    header: "Graduate Student Research Assistant",
+    date: "2014-2020",
+    location: "Design Technology Lab, New York University Abu Dhabi",
+    links: [],
+  },
+  {
+    header: "Graduate Student Teaching and Research Assistant",
+    date: "Fall 2013 - Spring 2014",
+    location: "Computer Science Department, Southern Connecticut State University",
+    desc: ["Courses: CSC321 Algorithm Design and Analysis, CSC152 Java Programming I, CSC310 Multimedia Systems, CSC200 Information Management and Productivity Software"],
+    links: [],
+  }
+];
+
+const awards = [
+  {
+    header: "2022 Outstanding Technical Achievement Award.",
+    text:"SLEUTH: Enabling Subject Matter Experts to Build Custom NLP Models. IBM Research."
+  },
+  {
+    header: "New York University Abu Dhabi Global Ph.D. Student Fellowship.",
+    text:"Stipend and tuition scholarship with a research assistantship. 2015-2020. New York and Abu Dhabi. "
+  },
+  {
+    header: "Cum Laude Award. Computer Science.",
+    text:"Fall 2012. Honors Convocation, Southern Connecticut State University."
+  },
+  {
+    header: "Academic Excellency Award in Computer Science.",
+    text:"Spring 2012. Honors Convocation, Southern Connecticut State University."
+  },
+  {
+    header: "Distinguished Scholar Awards ($12,000 scholarship).",
+    text:"Fall 2009. University of New Haven."
+  }
+];
+
+const skills = [
+  {
+    header: "Data and AI",
+    skills: ["PyTorch", "TensorFlow", "SQL", "ETL"]
+  },
+  {
+    header: "Programming Languages",
+    skills: ["Java", "Python"]
+  },
+  {
+    header: "Full-Stack Web Programming",
+    skills: ["JavaScript", "Node.js", "React", "Angular", "REST APIs"]
+  }
+];
+
+const talks = [
+  {
+    title: "Watson Orders: Human-in-the-loop approach for error discovery in conversational AI systems",
+    authors: "",
+    venue: "Fall 2023. IBM Research",
+    links:[]
+  },
+  {
+    title: "Pattern Induction: Enabling Business Users to Extract Texts with Highlighted Examples",
+    authors: "",
+    venue: "Fall 2022. Rensselaer Polytechnic Institute, MGMT 2100: Statistical Methods",
+    links:[]
+  },
+  {
+    title: "Enterprise Information Extraction (IE): Inducing Declarative IE Extractors",
+    authors: "",
+    venue: "Spring 2022. University of California, Santa Cruz, Natural language processing 203",
+    links:[]
+  },
+  {
+    title: "PhD Defense: Human-in-the-Loop Tools for Constructing and Debugging Data Extraction Pipelines",
+    authors: "",
+    venue: "Spring 2020. New York University Abu Dhabi",
+    links:[
+      {
+        "text": "Slides",
+        "href": "https://www.slideshare.net/MaedaHanafi/humanintheloop-tools-for-constructing-and-debugging-data-extraction-pipelines",
+      }
+    ]
+  },
+  {
+    title: "Tackling Challenges in Data Extraction Pipelines: Intuitive Interfaces, User Collaboration, and Error Explanations",
+    authors: "",
+    venue: "Fall 2019. New York University Abu Dhabi",
+    links:[
+      {
+        "text": "Slides",
+        "href": "https://www.slideshare.net/MaedaHanafi/tackling-challenges-in-data-extraction-pipelines-intuitive-interfaces-user-collaboration-and-error-explanations",
+      }
+    ]
+  },
+  {
+    title: "Program by Demonstration using Version Space Algebra",
+    authors: "",
+    venue: "Fall 2016. New York University Abu Dhabi",
+    links:[
+      {
+        "text": "Slides",
+        "href": "https://www.slideshare.net/MaedaHanafi/program-by-demonstration-using-version-space-algebra",
+      }
+    ]
+  },
+  {
+    title: "Handwritten Recognition using Neural Networks in Java",
+    authors: "",
+    venue: "Fall 2011. CSC 481 Artificial Intelligence and CSC400 Computer Science Seminar, Southern Connecticut State University",
+    links:[
+      {
+        "text": "Slides",
+        "href": "https://www.slideshare.net/MaedaHanafi/handwriting-recognition-230005476",
+      }
+    ]
+  }
+];
+
+const media = [
+  {
+    title: "Teenager Due to Graduate from SCSU this Year",
+    venue: "Southern News 2012",
+    links:[
+      {
+        "text": "Link",
+        "href": "https://thesouthernnews.org/2012/11/12/teenager-due-to-graduate-from-scsu-this-year/",
+      }
+    ]
+  },
+  {
+    title: "13-Year-Old Conn. Muslim Headed to University",
+    venue: "Fox News 2009",
+    links:[
+      {
+        "text": "Video",
+        "href": "https://www.youtube.com/watch?v=zpZcoRMnYeA",
+      }
+    ]
+  },
+  {
+    title: "Girl, 13, will study full time at UNH",
+    venue: "New Haven Register 2009",
+    links:[
+      {
+        "text": "Link",
+        "href": "http://www.nhregister.com/article/NH/20090531/NEWS/305319986",
+      }
+    ]
+  },
+];
+---
+
+<!DOCTYPE html>
+<html
+>
+  <Header title="CV | Maeda F. Hanafi" />
+  <body>
+    <div class="content">
+        <Sidebar selectedItem="cv" />
+      <nav class="main">
+        <div class="container">
+          <div class="back-nav-container">
+            <a href="/" class="back-nav-button w-inline-block"
+              ><img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+              <div>Back</div></a
+            >
+          </div>
+          <div class="content-container">
+            <h1>Education</h1>
+            <section class="items-container">
+              <div class="resouce-items">
+                  {education.map(edu => (
+                    <Experience 
+                      header={edu.header} 
+                      date={edu.date} 
+                      location={edu.location} 
+                      links={edu.links}
+                      desc={edu.desc}
+                    />
+                  ))}
+                </div>
+            </section>          
+            <h1>Work Experience</h1>
+            <section class="items-container">
+              <div class="resouce-items">
+                  {workExperience.map(exp => (
+                    <Experience 
+                      header={exp.header} 
+                      date={exp.date} 
+                      location={exp.location} 
+                      links={exp.links}
+                      desc={exp.desc}
+                    />
+                  ))}
+                </div>
+            </section>
+            <h1>Awards</h1>
+            <section class="items-container">
+              <div class="resouce-items">
+                <List list={awards} />
+              </div>
+            </section>
+            <h1>Skills</h1>
+            <section class="items-container">
+              <div class="resouce-items">
+                {skills && skills.map((skillset) => (
+                    <Skills
+                      header={skillset.header}
+                      skills={skillset.skills}
+                    />
+                ))}
+              </div>
+            </section>
+            <h1>Talks</h1>
+            <section class="items-container">
+              <div class="publication-items">
+                {talks && talks.map((pub) => (
+                    <Publication
+                      type={pub.type}
+                      title={pub.title}
+                      authors={pub.authors}
+                      venue={pub.venue}
+                      links={pub.links}
+                    />
+                ))}
+              </div>
+            </section>
+            <h1>Media</h1>
+            <section class="items-container">
+              <div class="publication-items">
+                {media && media.map((pub) => (
+                    <Publication
+                      type={pub.type}
+                      title={pub.title}
+                      authors={pub.authors}
+                      venue={pub.venue}
+                      links={pub.links}
+                    />
+                ))}
+              </div>
+            </section>
+            
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+  </body>
+</html>

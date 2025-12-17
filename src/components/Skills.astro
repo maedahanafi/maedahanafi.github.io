@@ -1,0 +1,12 @@
+---
+const { header, skills } = Astro.props;
+---
+
+<div class="single-item">
+  {skills.length > 0 && <>
+    <div class="mini-label-white">{header}</div>
+    <div class="chips-container">
+      {skills.map(techItem => <div class="single-chip small-chip">{techItem}</div>)}
+    </div>
+  </>}
+</div>

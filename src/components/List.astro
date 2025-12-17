@@ -1,0 +1,11 @@
+---
+const { list } = Astro.props;
+---
+<div class="single-item project-desc project-desc-list w-richtext">
+{list && list.length && 
+    <ul role="list">
+    {list.map(item => <li><span class="lead">{item.header}</span> {item.text}</li>)}
+    </ul>
+}
+</div>
+    

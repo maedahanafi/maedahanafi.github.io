@@ -1,0 +1,22 @@
+---
+const { type, title, authors, venue, links } = Astro.props;
+---
+
+<div class="single-item">
+  <div class="project-desc w-richtext">
+    <span class="lead">"{title}"</span> {authors && authors+"."} {venue && venue+"."}
+    {type}
+  
+    {links && links.length>0 &&
+        <>
+            <div class="chips-container">
+                {links.map(linkItem => 
+                    <a href={linkItem.href}>
+                        <div class="single-chip small-chip">{linkItem.text}</div>
+                    </a>
+                )}
+            </div>
+        <>
+    }
+  </div>
+</div>

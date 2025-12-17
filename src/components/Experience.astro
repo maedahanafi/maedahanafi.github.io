@@ -1,0 +1,26 @@
+---
+const { header, date, location, links, desc} = Astro.props;
+---
+
+<div class="single-item">
+  <h4>{header}</h4>
+  <span class="project-desc"><span class="lead">{location}</span>, {date}</span>
+  {desc && desc.length && 
+    <div class="project-desc project-desc-list w-richtext">
+        <ul role="list">
+        {desc.map(item => <li>{item}</li>)}
+        </ul>
+    </div>
+  }
+  {links && links.length>0 &&
+        <>
+            <div class="chips-container">
+                {links.map(linkItem => 
+                    <a href={linkItem.href}>
+                        <div class="single-chip small-chip">{linkItem.text}</div>
+                    </a>
+                )}
+            </div>
+        <>
+    }
+</div>
