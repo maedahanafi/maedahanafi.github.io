@@ -4,5 +4,6 @@ import partytown from '@astrojs/partytown';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://maedahanafi.github.io/',
   integrations: [partytown({ config: { forward: ['dataLayer.push'] } })]
 });
