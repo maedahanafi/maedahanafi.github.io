@@ -22,6 +22,8 @@ Add frameworks like react or tailwind using `astro add`.
 ## Deployment
 The current branch can be fully static built and deployed on any static hosting platform.
 
+Run `npm run build` before pushing.
+
 For deployment methods on various platforms, refer to the [Astro Official Deployment Guide](https://docs.astro.build/en/guides/deploy/).
 
 ## License
